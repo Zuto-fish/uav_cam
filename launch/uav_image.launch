@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="cv_pkg" type="image_publisher"  name="image_publisher"/>
+  <node pkg="cv_pkg" type="image_subscriber" name="iamge_subscriber"/>
+</launch>
