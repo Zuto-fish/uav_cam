@@ -13,17 +13,21 @@ extern "C" {
 
 // 视频流地址
 const char* videoStreamUrl = "tcp://192.168.128.5:2020";
+std::string device_ip;
 
 
 int main(int argc, char **argv) {
     
     ros::init(argc, argv, "image_publisher");
     ros::NodeHandle nh;
+    
+    std::string param_name = "/devices/" + std::string(argv[1]) + "/ip";
+    std::string topic_name = std::string(argv[1])+"/image_raw";
 
-    ros::Publisher img_pub = nh.advertise<sensor_msgs::Image>("uav_image_raw", 10);
-
-
-
+    ros::Publisher img_pub = nh.advertise<sensor_msgs::Image>(topic_name, 10);
+    
+    nh.getParam(param_name, device_ip);
+    
     // 初始化FFmpeg库
     avformat_network_init();
     AVFormatContext* formatContext = avformat_alloc_context();

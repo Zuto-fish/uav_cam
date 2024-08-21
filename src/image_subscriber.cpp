@@ -18,9 +18,10 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "image_subscriber");
     ros::NodeHandle nh;
-    
+    std::string topic_name = std::string(argv[1])+"/image_raw";
+
     image_transport::ImageTransport it(nh);
-    image_transport::Subscriber sub = it.subscribe("uav_image_raw", 10, imageCallback);
+    image_transport::Subscriber sub = it.subscribe(topic_name, 10, imageCallback);
     
     ros::spin();
     return 0;

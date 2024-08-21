@@ -1,4 +1,9 @@
 <launch>
-  <node pkg="cv_pkg" type="image_publisher"  name="image_publisher"/>
-  <node pkg="cv_pkg" type="image_subscriber" name="iamge_subscriber"/>
+  <!-- 加载 YAML 文件 -->
+  <rosparam file="$(find uav_cam)/config/config.yaml" command="load"/>
+
+  <!-- 启动第一个无人机的 image_publisher 和 image_subscriber 节点 -->
+  <node name="drone1_image_publisher" pkg="uav_cam" type="image_publisher" args="drone1" output="screen"/>
+  <node name="drone1_image_subscriber" pkg="uav_cam" type="image_subscriber" args="drone1" output="screen"/>
+
 </launch>

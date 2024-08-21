@@ -1,0 +1,32 @@
+<launch>
+  <!-- 加载 YAML 文件 -->
+  <rosparam file="$(find uav_cam)/config/config.yaml" command="load"/>
+
+  <!-- 启动第一个无人机的 image_publisher 和 image_subscriber 节点 -->
+  <node name="drone1_image_publisher" pkg="uav_cam" type="image_publisher" args="drone1" output="screen"/>
+  <node name="drone1_image_subscriber" pkg="uav_cam" type="image_subscriber" args="drone1" output="screen"/>
+
+  <!-- 启动第二个无人机的 image_publisher 和 image_subscriber 节点 -->
+  <node name="drone2_image_publisher" pkg="uav_cam" type="image_publisher" args="drone2" output="screen"/>
+  <node name="drone2_image_subscriber" pkg="uav_cam" type="image_subscriber" args="drone2" output="screen"/>
+
+  <!-- 启动第三个无人机的 image_publisher 和 image_subscriber 节点 -->
+  <node name="drone3_image_publisher" pkg="uav_cam" type="image_publisher" args="drone3" output="screen"/>
+  <node name="drone3_image_subscriber" pkg="uav_cam" type="image_subscriber" args="drone3" output="screen"/>
+
+  <!-- 启动第四个无人机的 image_publisher 和 image_subscriber 节点 -->
+  <node name="drone4_image_publisher" pkg="uav_cam" type="image_publisher" args="drone4" output="screen"/>
+  <node name="drone4_image_subscriber" pkg="uav_cam" type="image_subscriber" args="drone4" output="screen"/>
+
+  <!-- 启动第五个无人机的 image_publisher 和 image_subscriber 节点 -->
+  <node name="drone5_image_publisher" pkg="uav_cam" type="image_publisher" args="drone5" output="screen"/>
+  <node name="drone5_image_subscriber" pkg="uav_cam" type="image_subscriber" args="drone5" output="screen"/>  
+
+  <!-- 启动第六个无人机的 image_publisher 和 image_subscriber 节点 -->
+  <node name="drone6_image_publisher" pkg="uav_cam" type="image_publisher" args="drone6" output="screen"/>
+  <node name="drone6_image_subscriber" pkg="uav_cam" type="image_subscriber" args="drone6" output="screen"/>  
+
+
+</launch>
+
+
